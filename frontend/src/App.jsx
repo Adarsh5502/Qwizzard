@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar'
 import { Route , Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import LoginPopup from './components/LoginPopup/LoginPopup'
+import Menu from './pages/Menu/Menu'
 
 const App = () => {
   // 1. Keep showLogin as false so the site starts on the Home page
@@ -20,6 +21,7 @@ const App = () => {
         
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/menu' element={<Menu/>}/>
         </Routes>
       </div>
     </>

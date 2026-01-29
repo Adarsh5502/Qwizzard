@@ -52,10 +52,10 @@ const LoginPopup = ({ setShowLogin, setIsLoggedIn }) => {
         </div>
         <button type="submit">{currState === "Sign Up" ? "Create account" : "Login"}</button>
         
-        <div className="login-popup-condition">
+        {/* <div className="login-popup-condition">
           <input type="checkbox" />
           <p>By continuing, I agree to the terms of use & privacy policy.</p>
-        </div>
+        </div> */}
         {currState === "Login"
           ? <p>Create a new account? <span onClick={() => setCurrState("Sign Up")} style={{color:'orange', cursor:'pointer'}}>Click here</span></p>
           : <p>Already have an account? <span onClick={() => setCurrState("Login")} style={{color:'orange', cursor:'pointer'}}>Login here</span></p>

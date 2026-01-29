@@ -1,20 +1,31 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
-// Add isLoggedIn and setIsLoggedIn to the props
 const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
     const [menu, setMenu] = useState("home");
 
     return (
         <div className='navbar'>
-            <h1 className='logo'>Quizzard</h1>
+            {/* 1. Logo should be outside the <ul> and link to Home */}
+            <Link to='/' onClick={() => setMenu("home")} style={{ textDecoration: 'none' }}>
+                <h1 className='logo'>Quizzard</h1>
+            </Link>
 
             <ul className="navbar-menu">
-                <li onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</li>
-                <li onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</li>
-                <li onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact us</li>
+                {/* 2. Simplified Home Link */}
+                <li onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>
+                    <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link>
+                </li>
                 
-                {/* Only show this link if the user is NOT logged in */}
+                <li onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>
+                    <Link to='/menu' style={{ textDecoration: 'none', color: 'inherit' }}>Menu</Link>
+                </li>
+                
+                <li onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>
+                    Contact us
+                </li>
+                
                 {!isLoggedIn && (
                     <li onClick={() => { setMenu("signup/login"); setShowLogin(true); }} 
                         className={menu === "signup/login" ? "active" : ""}>
@@ -28,7 +39,6 @@ const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
                     <input type="text" placeholder="Search quizzes..." />
                 </div>
 
-                {/* Conditional Rendering: Show Logout if logged in, otherwise show Sign In */}
                 {isLoggedIn ? (
                     <div className='navbar-profile'>
                         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
