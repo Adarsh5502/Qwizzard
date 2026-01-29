@@ -1,0 +1,66 @@
+.navbar {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ff4c24; /* Theme color */
+    cursor: pointer;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+}
+
+.navbar-menu li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* The active underline effect */
+.navbar-menu li.active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar-search-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-search-icon input {
+    border: 1px solid #a9a9a9;
+    padding: 8px 15px;
+    border-radius: 50px;
+    outline: none;
+}
+
+.navbar button {
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid #ff4c24;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar button:hover {
+    background-color: #fff4f2;
+}
