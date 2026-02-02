@@ -1,12 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom' // 1. Add this import
 import './Menu.css'
 
 const Menu = () => {
+  const navigate = useNavigate(); // 2. Define the navigate function here
+
   const categories = [
-    { id: 1, name: "Javascript", icon: "", color: "#f7df1e" },
-    { id: 2, name: "React JS", icon: "", color: "#61dafb" },
-    { id: 3, name: "General Science", icon: "", color: "#4caf50" },
-    { id: 4, name: "Geography", icon: "", color: "#ff9800" }
+    { id: 1, name: "Javascript", icon: "💻", color: "#f7df1e" },
+    { id: 2, name: "React JS", icon: "⚛️", color: "#61dafb" },
+    { id: 3, name: "General Science", icon: "🔬", color: "#4caf50" },
+    { id: 4, name: "Geography", icon: "🌍", color: "#ff9800" }
   ];
 
   return (
@@ -17,7 +20,10 @@ const Menu = () => {
           <div key={item.id} className="menu-card" style={{ borderBottom: `5px solid ${item.color}` }}>
             <span className="menu-icon">{item.icon}</span>
             <h3>{item.name}</h3>
-            <button className='start-btn'>Start Quiz</button>
+            {/* Now 'navigate' will work because it is defined above */}
+            <button className='start-btn' onClick={() => navigate('/play')}>
+              Start Quiz
+            </button>
           </div>
         ))}
       </div>
@@ -25,4 +31,4 @@ const Menu = () => {
   )
 }
 
-export default Menu  
+export default Menu

@@ -4,6 +4,8 @@ import { Route , Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Menu from './pages/Menu/Menu'
+import Quiz from './components/Quiz/Quiz'
+import Contact from './pages/Contact/Contact'
 
 const App = () => {
   // 1. Keep showLogin as false so the site starts on the Home page
@@ -22,6 +24,10 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/menu' element={<Menu/>}/>
+            {/* <Route path='pizza' element={<Pizza />} />
+            <Route path='burgers' element={<Burgers />} /> */}
+          <Route path='/play' element={<Quiz />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </div>
     </>

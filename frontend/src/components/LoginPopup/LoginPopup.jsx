@@ -15,7 +15,7 @@ const LoginPopup = ({ setShowLogin, setIsLoggedIn }) => {
       return;
     }
 
-    const fixedEmail = "adarsh@1.com"
+    const fixedEmail = "welcom123.com"
     const fixedPassword = "welcome123"
 
     if (email === fixedEmail && password === fixedPassword) {

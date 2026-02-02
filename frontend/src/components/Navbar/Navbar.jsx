@@ -23,7 +23,7 @@ const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
                 </li>
                 
                 <li onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>
-                    Contact us
+                    <Link to='/contact' style={{ textDecoration: 'none', color: 'inherit' }}>Contact us</Link>
                 </li>
                 
                 {!isLoggedIn && (
