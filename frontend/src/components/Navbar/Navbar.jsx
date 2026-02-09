@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import { useAuth } from '../../hooks/AuthContext'
 
-const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
+const Navbar = () => {
+    const { setShowLogin, isLoggedIn, setIsLoggedIn } = useAuth();
     const [menu, setMenu] = useState("home");
 
     return (
         <div className='navbar'>
-            {/* 1. Logo should be outside the <ul> and link to Home */}
             <Link to='/' onClick={() => setMenu("home")} style={{ textDecoration: 'none' }}>
                 <h1 className='logo'>Quizzard</h1>
             </Link>
 
             <ul className="navbar-menu">
-                {/* 2. Simplified Home Link */}
                 <li onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>
                     <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link>
                 </li>
@@ -27,8 +27,10 @@ const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
                 </li>
                 
                 {!isLoggedIn && (
-                    <li onClick={() => { setMenu("signup/login"); setShowLogin(true); }} 
-                        className={menu === "signup/login" ? "active" : ""}>
+                    <li
+                        onClick={() => { setMenu("signup/login"); setShowLogin(true); }}
+                        className={menu === "signup/login" ? "active" : ""}
+                    >
                         Signup/Login
                     </li>
                 )}

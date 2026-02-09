@@ -5,11 +5,11 @@
     
     /* This creates the colorful background without an image */
     background-color: #4b6cb7; /* Fallback for old browsers */
-    background: linear-gradient(135deg, #667eea 0%, #3c2c4d 100%);
+    background: linear-gradient(135deg, #F47E2A 0%, #F42AA0 100%);
     
     /* Optional: Adds a subtle "glassy" texture */
-    background-image: radial-gradient(circle at top right, rgba(0, 0, 0, 0.222), transparent),
-                      radial-gradient(circle at bottom left, rgba(27, 4, 23, 0.518), transparent);
+    background-image: radial-gradient(circle at top right, #F47E2A, transparent),
+                      radial-gradient(circle at bottom left, #F42A3B, transparent);
     
     border-radius: 20px;
     display: flex;
@@ -57,4 +57,56 @@
 .header-contents button:hover {
     transform: scale(1.05);
     background-color: #f0f0f0;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .header {
+    height: 40vw;
+    min-height: 350px;
+  }
+
+  .header-contents {
+    max-width: 70%;
+    margin-left: 5vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    min-height: 300px;
+    padding: 40px 20px;
+  }
+
+  .header-contents {
+    max-width: 100%;
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-contents h2 {
+    font-size: 2rem;
+  }
+
+  .header-contents p {
+    font-size: 1rem;
+  }
+
+  .header-contents button {
+    padding: 12px 30px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .header {
+    min-height: 250px;
+  }
+
+  .header-contents h2 {
+    font-size: 1.7rem;
+  }
 }
